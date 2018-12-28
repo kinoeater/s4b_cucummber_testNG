@@ -1,0 +1,1 @@
+java -Dwebdriver.chrome.driver="D:\work\s4bautomation\s4b_3_client\chromedriver.exe" -jar selenium-server-standalone-3.141.59.jar -role node -nodeConfig nodeAConfig.json
