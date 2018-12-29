@@ -137,7 +137,7 @@ public static void right_click_B(String sel) {
 	
 	String text=myDynamicElement.getText();
 	System.out.println("User can see " + text);
-	Assert.assertTrue(keys.equals(text));
+	Assert.assertTrue(keys.equalsIgnoreCase(text));
 	
     		        } 
     	

@@ -41,6 +41,7 @@ public class mystepdefinitions_A extends HookA {
 		   Reporter.log("Exited the Application A!"); 
 	    	Adriver.quit();
 	    	Thread.sleep(5000);
+	    	
 		}
 	   
 	   else {
@@ -185,12 +186,12 @@ public class mystepdefinitions_A extends HookA {
     
     @And("^UserA waits for \"([^\"]*)\" seconds$")
     public void usera_waits_for_something_seconds(String strArg1) throws Throwable {
-        int sleeptime=Integer.parseInt(strArg1);
+        
+    //	waitForPageLoaded_A();
+    	
+    	int sleeptime=Integer.parseInt(strArg1);
     	Thread.sleep(sleeptime);
-//    	int i= Adriver.findElements(By.xpath("//*[@title='Murat Cinar']")).size();
-//    	System.out.println("******There are "+ i + "Murat in the message history list");
-//    	List<WebElement> items=Adriver.findElements(By.xpath("//ul[@id='message-list-Yesterday']/li"));
-//    	System.out.println(items.get(1).getText());
+
     }
     
 }

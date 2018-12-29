@@ -2,6 +2,7 @@ package utility;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -41,7 +42,7 @@ public class HookA {
 	    public static void RemoteLaunch_Client_A() throws InterruptedException, FileNotFoundException, IOException, org.json.simple.parser.ParseException {
 	    
 	    String BinaryPathA="D:\\ConnectMe_Desktop_forSVAutomation\\ConnectMe Desktop - forSVAutomation.exe";
-	    String huburl="http://217.78.102.224:4444/wd/hub";
+	    String huburl="http://192.168.1.54:4444/wd/hub";
 	
 		
 		ChromeOptions options = new ChromeOptions();
@@ -93,6 +94,24 @@ public class HookA {
       return Adriver;
    }
 
+ 		//-----Wait for page Load----	
+ 		
+ 		public void waitForPageLoaded_A() {
+ 	        ExpectedCondition<Boolean> expectation = new
+ 	                ExpectedCondition<Boolean>() {
+ 	                    public Boolean apply(WebDriver driver) {
+ 	                        return ((JavascriptExecutor) driver).executeScript("return document.readyState").toString().equals("complete");
+ 	                    }
+ 	                };
+ 	        try {
+ 	            Thread.sleep(1000);
+ 	            WebDriverWait wait = new WebDriverWait(Adriver, 30);
+ 	            wait.until(expectation);
+ 	        } catch (Throwable error) {
+ 	            Assert.fail("Timeout waiting for Page Load Request to complete.");
+ 	        }
+ 	    }
+ 	
 
  		//---read JSON file---
  		
@@ -163,6 +182,8 @@ public class HookA {
     public static void verifyA(String keys, String sel) throws Exception {
     	
     
+    	
+    	
     	try {
     		
 	By by = getByA(sel);
@@ -171,7 +192,7 @@ public class HookA {
 	
 	String text=myDynamicElement.getText();
 	
-	Assert.assertTrue(keys.equals(text));
+	Assert.assertTrue(keys.equalsIgnoreCase(text));
 	System.out.println("User can see " + text);
 //	Assert.assertEquals(keys, text);
 	

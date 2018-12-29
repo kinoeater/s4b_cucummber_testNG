@@ -1,11 +1,21 @@
 @desktop @UserA
-Feature: Verify User A can search and view the details of a contact.
+Feature: Verify User A can perform basic actions on contacts.
 
-  Scenario: View the details of a contact
+  Scenario: User can search a contact from the search bar
     Given UserA logs into kandy with "011902165222512@172.28.247.41" "myol" "3456"
       And UserA logs into skype with "myol@gbsolutions.work" "Lkjh1234"
      When UserA clicks "contacts.credentialssaveno"
       And UserA waits for "3000" seconds
+      And UserA can see "Create Group" on "contacts.creategroup.button" location
+  		And UserA clicks "contacts.search.button"
+      And UserA enters "Semra Boyaci" to "contacts.search.input"
+      And UserA waits for "3000" seconds
+      	And UserA clicks "contacts.search.close.button"
+      	And UserA waits for "3000" seconds
+   
+      
+  Scenario: User can view the details of a contact
+    Given UserA can see "Create Group" on "contacts.creategroup.button" location 
       And UserA clicks "contacts.search.button"
       And UserA enters "Semra Boyaci" to "contacts.search.input"
       And UserA waits for "3000" seconds
@@ -14,7 +24,9 @@ Feature: Verify User A can search and view the details of a contact.
       And UserA waits for "2000" seconds
       And UserA can see "close" on "contact.details.right.panel.close.button.text.area" location
       And UserA clicks "contact.details.right.panel.close.button"
-      And UserA right clicks on "Contact.Semra.Boyaci" 
+      
+  Scenario: User can add contact, then add it to favorites, remove from favorites and remove from contacts   
+    Given UserA right clicks on "Contact.Semra.Boyaci" 
       And UserA waits for "2000" seconds
       And UserA clicks "contact.add.contact" 
       And UserA waits for "2000" seconds
