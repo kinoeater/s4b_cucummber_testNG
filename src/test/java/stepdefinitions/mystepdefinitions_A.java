@@ -1,10 +1,13 @@
 package stepdefinitions;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
@@ -104,14 +107,14 @@ public class mystepdefinitions_A extends HookA {
 		   right_click_A(selectors.getProperty(strArg1));
 	    }
 
-
-	    
-	    @And("^UserA opens \"([^\"]*)\"$")
-	    public void usera_opens_something(String strArg1) throws Throwable {
-	        Adriver.get(strArg1);
-	    }
-
-	  	   
+	   
+	   @And("^UserA saves debug log$")
+	    public void usera_saves_debug_log() throws Throwable {
+	        
+		  		   
+		   Adriver.switchTo().alert().accept();
+		   
+	    } 
          
     @Given("^UserA is launched$")
     public void usera_is_launched() throws Throwable {

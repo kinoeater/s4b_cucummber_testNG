@@ -6,15 +6,15 @@ import org.testng.annotations.Test;
 
 
 
-@CucumberOptions(features = {"src/test/resources/features/Search_View_details_Add_Remove_Contact.feature"}
+@CucumberOptions(features = {"src/test/resources/features/Settings.buttons.check.feature"}
         , glue = {"stepdefinitions", "utility"}
         , plugin = {"pretty", "html:target/cucumber-reports", "json:target/cucumber-reports/Cucumber.json"}
-        , tags = {"@desktop"}
+        , tags = {"@desktop","@UserA","@UserA"}
 )
 
 
 @Test
-public class Search_View_details_Add_Remove_Contact_Test extends AbstractTestNGCucumberTests { 
+public class Settings_Button_Check_Test extends AbstractTestNGCucumberTests {
 
 	
 	}
