@@ -1,10 +1,12 @@
 package stepdefinitions;
 
 import java.awt.Robot;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -62,8 +64,28 @@ public class mystepdefinitions_A extends HookA {
 	   @Given("^UserA test method$")
 	    public void usera_test_method() throws Throwable {
 		   
-	   
+		   System.out.println(Adriver.getWindowHandles());
+		   Thread.sleep(3000);
+		   System.out.println("Get window handle is "+Adriver.getWindowHandle());
+		   
+	 	    
+		   
 	    }
+	   
+
+	   @Given("^UserA test second method$")
+	    public void usera_test_second_method() throws Throwable {
+		   
+		   System.out.println(Adriver.getWindowHandles());
+		   Thread.sleep(3000);
+		   System.out.println("Get window handle is "+Adriver.getWindowHandle());
+		   
+		   for(String winHandle : Adriver.getWindowHandles()){
+			    Adriver.switchTo().window(winHandle);
+			}
+		   
+	 		    }
+	   
 	   
 	   
 	   @And("^UserA choose \"([^\"]*)\" to send message$")
@@ -111,8 +133,23 @@ public class mystepdefinitions_A extends HookA {
 	   @And("^UserA saves debug log$")
 	    public void usera_saves_debug_log() throws Throwable {
 	        
-		  		   
-		   Adriver.switchTo().alert().accept();
+		    Thread.sleep(4000);
+		
+		    Robot robot = new Robot();
+		    robot.mouseMove(250,250);
+	        robot.mousePress(InputEvent.BUTTON1_MASK);
+	        robot.mouseRelease(InputEvent.BUTTON1_MASK);
+	        robot.delay(2000);
+	        robot.keyRelease(KeyEvent.VK_ENTER);
+	        robot.keyPress(KeyEvent.VK_ALT);
+	        robot.keyPress(KeyEvent.VK_S);
+	        robot.delay(2000);
+	        robot.keyRelease(KeyEvent.VK_S);
+	    	robot.keyRelease(KeyEvent.VK_ALT);
+	    	robot.delay(2000);
+			   
+			System.out.println(Adriver.findElement(By.xpath("//*[@id='settings-view__debug-logs']/div[2]/div[2]")).getText());
+			Adriver.findElement(By.xpath("//*[@id='modal-view__settings-view__debug-logs__hide-close-button']/i")).click();
 		   
 	    } 
          

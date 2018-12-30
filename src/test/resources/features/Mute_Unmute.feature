@@ -17,7 +17,7 @@ Feature: Verify that User A and User B logs in and make a call, then mute-unmute
       And UserB enters "011902165222512@172.28.247.41" to "calls.dialpadinput"
       And UserB waits for "3000" seconds
       And UserB clicks "calls.dialpadcall.button"
-      And UserA clicks "calls.tab"
+      And UserA clicks "calls.tab" 
       And UserA clicks "calls.answer.button"
       And UserA waits for "3000" seconds
       And UserA can see "mic" on "calls.actions.microphone.button.icon" location
