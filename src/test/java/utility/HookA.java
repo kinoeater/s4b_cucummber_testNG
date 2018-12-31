@@ -42,7 +42,7 @@ public class HookA {
 	    public static void RemoteLaunch_Client_A() throws InterruptedException, FileNotFoundException, IOException, org.json.simple.parser.ParseException {
 	    
 	    String BinaryPathA="D:\\ConnectMe_Desktop_forSVAutomation\\ConnectMe Desktop - forSVAutomation.exe";
-	    String huburl="http://192.168.1.9:4444/wd/hub";
+	    String huburl="http://192.168.1.54:4444/wd/hub";
 	
 		
 		ChromeOptions options = new ChromeOptions();

@@ -133,14 +133,15 @@ public class mystepdefinitions_A extends HookA {
 	   @And("^UserA saves debug log$")
 	    public void usera_saves_debug_log() throws Throwable {
 	        
-		    Thread.sleep(4000);
+		    Thread.sleep(2000);
+		    
 		
 		    Robot robot = new Robot();
-		    robot.mouseMove(250,250);
-	        robot.mousePress(InputEvent.BUTTON1_MASK);
-	        robot.mouseRelease(InputEvent.BUTTON1_MASK);
-	        robot.delay(2000);
-	        robot.keyRelease(KeyEvent.VK_ENTER);
+//		    robot.mouseMove(250,250);
+//	        robot.mousePress(InputEvent.BUTTON1_MASK);
+//	        robot.mouseRelease(InputEvent.BUTTON1_MASK);
+//	        robot.delay(2000);
+//	        robot.keyRelease(KeyEvent.VK_ENTER);
 	        robot.keyPress(KeyEvent.VK_ALT);
 	        robot.keyPress(KeyEvent.VK_S);
 	        robot.delay(2000);

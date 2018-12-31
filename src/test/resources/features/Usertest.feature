@@ -1,32 +1,77 @@
-@desktop @UserA @UserB
-Feature: Verify that User A can login successfully with correct credentials.	
+@desktop @UserA
+Feature: Verify UserA can search and add contacts then create a group, then add members to group and delete the group.
 
-  Scenario: User A logins to S4B Web RTC with correct credentials and do not save the credentials
+  Scenario: Add contacts, create group, delete group.
     Given UserA logs into kandy with "011902165222512@172.28.247.41" "myol" "3456"
-      And UserA clicks "login.skypeskip"  
+      And UserA logs into skype with "myol@gbsolutions.work" "Lkjh1234"
      When UserA clicks "contacts.credentialssaveno"
-     Given UserB logs into kandy with "011902165225323@172.28.247.41" "muratc" "3456"
-      And UserB clicks "login.skypeskip"  
-     When UserB clicks "contacts.credentialssaveno"
-      And UserB waits for "3000" seconds  
-      And UserB clicks "calls.dialbutton"
-      And UserB clicks "calls.dialpadinput"
-      And UserB enters "011902165222512@172.28.247.41" to "calls.dialpadinput"
-      And UserB waits for "3000" seconds 
-      And UserB clicks "calls.dialpadcallbutton"
-      And UserA clicks "calls.answerbutton"
-      And UserA waits for "10000" seconds
-      And UserA clicks "calls.actions.callend.button"
-      And UserA clicks "settings.tab"
-      And UserA clicks "settings.tab"
-      And UserA clicks "settings.logoutbutton" 
-      And UserA clicks "settings.popuplogout"
-      And UserA exits client
-      And UserB clicks "settings.tab"
-      And UserB clicks "settings.tab"
-      And UserB clicks "settings.logoutbutton" 
-      And UserB clicks "settings.popuplogout"
-      And UserB exits client
-     
+      And UserA can see "Create Group" on "contacts.creategroup.button" location 
+      And UserA waits for "3000" seconds
+      And UserA clicks "contacts.search.button"
+      And UserA enters "Semra Boyaci" to "contacts.search.input"
+      And UserA waits for "3000" seconds
+      And UserA right clicks on "Contact.Semra.Boyaci" 
+      And UserA clicks "contact.add.contact" 
+      And UserA waits for "2000" seconds
+      And UserA clicks "contacts.search.close.button"
+      And UserA waits for "2000" seconds
+      And UserA clicks "contacts.search.button"
+      And UserA enters "Ecem Yilmaz" to "contacts.search.input"
+      And UserA waits for "2000" seconds
+      And UserA right clicks on "Contact.Ecem.Yilmaz" 
+      And UserA clicks "contact.add.contact" 
+      And UserA waits for "2000" seconds
+      And UserA clicks "contacts.search.close.button"
+      And UserA waits for "2000" seconds
+      And UserA clicks "contacts.search.button"
+      And UserA enters "Murat Cinar" to "contacts.search.input"
+      And UserA waits for "2000" seconds
+      And UserA right clicks on "Contact.Murat.Cinar" 
+      And UserA clicks "contact.add.contact" 
+      And UserA waits for "2000" seconds
+      And UserA clicks "contacts.search.close.button"
+      And UserA can see "Create Group" on "contacts.creategroup.button" location
+      And UserA clicks "contacts.creategroup.button"
+       And UserA waits for "2000" seconds
+      And UserA clicks "contacts.creategroup.name.input"
+       And UserA waits for "2000" seconds
+       And UserA clicks "contacts.creategroup.name.cancel"
+        And UserA waits for "2000" seconds
+        And UserA clicks "contacts.creategroup.button"
+       And UserA waits for "2000" seconds
+      And UserA clicks "contacts.creategroup.name.input"
+       And UserA waits for "2000" seconds
+      And UserA enters "NewGroup" to "contacts.creategroup.name.input"
+      And UserA waits for "4000" seconds
+      And UserA clicks "contacts.creategroup.name.save"
+       And UserA waits for "5000" seconds
+        And UserA clicks "contacts.NewGroup.more.button"
+      And UserA waits for "2000" seconds
+      And UserA clicks "contact.group.modify"
+      And UserA waits for "2000" seconds
+      And UserA clicks "Contact.Murat.Cinar.Group"
+      And UserA waits for "2000" seconds
+      And UserA clicks "Contact.Semra.Boyaci.Group"
+      And UserA waits for "2000" seconds
+      And UserA clicks "contacts.creategroup.name.save"
+      And UserA waits for "2000" seconds
+      And UserA clicks "contacts.NewGroup.more.button"
+      And UserA waits for "2000" seconds
+      And UserA clicks "contact.group.remove"
+      And UserA waits for "2000" seconds
+      And UserA clicks "contacts.creategroup.delete.cancel.button"
+      And UserA waits for "2000" seconds
+      And UserA clicks "contacts.NewGroup.more.button"
+      And UserA waits for "2000" seconds
+      And UserA clicks "contact.group.remove"
+      And UserA waits for "2000" seconds
+      And UserA clicks "contacts.creategroup.delete.button"
       
-     
+    
+  
+      
+      
+          
+  
+      
+      
