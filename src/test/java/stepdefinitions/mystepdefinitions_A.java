@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -39,24 +40,39 @@ public class mystepdefinitions_A extends HookA {
     }
     
    @After ("@UserA") 
-    public void afterScenarioA(Scenario scenario) throws InterruptedException, IOException{
+    public void afterScenarioA(Scenario scenario) throws InterruptedException, IOException, ParseException{
   
+		   
 	   
 	   if (scenario.isFailed()) {
-		   Reporter.log("Exited the Application A!"); 
+		    Reporter.log("Exited the Application A!"); 
 	    	Adriver.quit();
 	    	Thread.sleep(5000);
+	    	Adriver.quit();
+//	    	RemoteLaunch_Client_A();
+//	    	typeA(selectors.getProperty("login.kandyusername"), selectors.getProperty("userA.kandy.name"));
+//	    	typeA(selectors.getProperty("login.kandyauthname"), selectors.getProperty("userA.kandy.auth"));
+//	    	typeA(selectors.getProperty("login.kandypassword"), selectors.getProperty("userA.kandy.pass"));
+//	    	clickA(selectors.getProperty("login.kandysubmit"));   
+//	      	typeA(selectors.getProperty("login.skypeusername"), selectors.getProperty("userA.skype.name"));
+//	    	typeA(selectors.getProperty("login.skypepassword"), selectors.getProperty("userA.skype.pass"));
+//	    	clickA(selectors.getProperty("login.skypesubmit")); 
+//	    	Adriver.findElement(By.id(selectors.getProperty("contacts.credentialssaveno"))).click();
+//	    	Thread.sleep(3000);
 	    	
-		}
+	    	 
+	    	}
 	   
 	   else {
 		   
 		   System.out.println("Feature passed!");
-	   }
+	        
+	        }
       
     
-    }  
+            }  
     
+   
 	public static  RemoteWebDriver getAdriver() {
         return Adriver;
     }
@@ -169,9 +185,9 @@ public class mystepdefinitions_A extends HookA {
     public void usera_logs_into_kandy_with_something_something_something(String strArg1, String strArg2, String strArg3) throws Throwable {
        
     	RemoteLaunch_Client_A();
-    	typeA(selectors.getProperty("login.kandyusername"), strArg1);
-    	typeA(selectors.getProperty("login.kandyauthname"), strArg2);
-    	typeA(selectors.getProperty("login.kandypassword"), strArg3);
+    	typeA(selectors.getProperty("login.kandyusername"), selectors.getProperty("userA.kandy.name"));
+    	typeA(selectors.getProperty("login.kandyauthname"), selectors.getProperty("userA.kandy.auth"));
+    	typeA(selectors.getProperty("login.kandypassword"), selectors.getProperty("userA.kandy.pass"));
     	clickA(selectors.getProperty("login.kandysubmit"));
     	    	
     }
@@ -179,8 +195,8 @@ public class mystepdefinitions_A extends HookA {
     @And("^UserA logs into skype with \"([^\"]*)\" \"([^\"]*)\"$")
     public void usera_logs_into_skype_with_something_something(String strArg1, String strArg2) throws Throwable {
     
-      	typeA(selectors.getProperty("login.skypeusername"), strArg1);
-    	typeA(selectors.getProperty("login.skypepassword"), strArg2);
+      	typeA(selectors.getProperty("login.skypeusername"), selectors.getProperty("userA.skype.name"));
+    	typeA(selectors.getProperty("login.skypepassword"), selectors.getProperty("userA.skype.pass"));
     	clickA(selectors.getProperty("login.skypesubmit"));
     	
     }

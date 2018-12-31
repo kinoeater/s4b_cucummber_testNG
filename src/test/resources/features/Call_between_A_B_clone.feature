@@ -2,12 +2,12 @@
 Feature: Verify that User A and User B logs in and make a call.	
 
   Scenario: Call between A and B
-   Given UserA logs into kandy with "011902165222512@172.28.247.41" "myol" "3456"
-      And UserA logs into skype with "myol@gbsolutions.work" "Lkjh1234"
+   Given UserA logs into kandy with "userA.kandy.name" "userA.kandy.auth" "userA.kandy.pass"
+      And UserA logs into skype with "userA.skype.name" "userA.skype.pass"
      When UserA clicks "contacts.credentialssaveno"
       And UserA waits for "3000" seconds
-    Given UserB logs into kandy with "011902165225323@172.28.247.41" "muratc" "3456"
-      And UserB logs into skype with "muratc@gbsolutions.work" "Lkjh1234"
+  Given UserA logs into kandy with "userB.kandy.name" "userB.kandy.auth" "userB.kandy.pass"
+      And UserA logs into skype with "userB.skype.name" "userB.skype.pass"
      When UserB clicks "contacts.credentialssaveno"
       And UserB waits for "3000" seconds 
       And UserB clicks "calls.tab"
