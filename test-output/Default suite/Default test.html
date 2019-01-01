@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jan 01 21:52:11 EET 2019</td>
+<td>Started on:</td><td>Wed Jan 02 00:00:12 EET 2019</td>
 </tr>
-<tr><td>Total time:</td><td>163 seconds (163454 ms)</td>
+<tr><td>Total time:</td><td>182 seconds (182014 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,15 +75,15 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='runners.Test_Test.feature()'><b>feature</b><br>Test class: runners.Test_Test<br>Test method: Runs Cucumber Feature<br>Parameters: User can add contact, then add it to favorites, remove from favorites and remove from contacts<br/>
-<a href="#Output-807986446" onClick='toggleBox("Output-807986446", this, "Show output", "Hide output");'>Show output</a>
+<td title='runners.Test_Test.feature()'><b>feature</b><br>Test class: runners.Test_Test<br>Test method: Runs Cucumber Feature<br>Parameters: User can view the details of a contact<br/>
+<a href="#Output-1788034018" onClick='toggleBox("Output-1788034018", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-807986446" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-807986446">
+<a href="#Output-1788034018" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1788034018">
 Exited the Application A!<br/>
 </div>
 </td>
-<td><div><pre>cucumber.runtime.CucumberException: java.lang.NullPointerException
+<td><div><pre>cucumber.runtime.CucumberException: java.lang.Exception: Sth went wrong! Upps! taking a screenshoot!
 	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
 	at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -111,13 +111,12 @@ Exited the Application A!<br/>
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.NullPointerException
-	at utility.HookA.getByA(HookA.java:234)
-	at utility.HookA.right_click_A(HookA.java:159)
-	at stepdefinitions.mystepdefinitions_A.usera_right_clicks_on_something(mystepdefinitions_A.java:144)
-	at ?.And UserA right clicks on &quot;Contact.Semra.Boyaci******************&quot;(src/test/resources/features/Contacts_TCs_3.feature:17)
-</pre></div><a href='#' onClick='toggleBox("stack-trace807986446", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace807986446'><pre>cucumber.runtime.CucumberException: java.lang.NullPointerException
+Caused by: java.lang.Exception: Sth went wrong! Upps! taking a screenshoot!
+	at utility.HookA.verifyA(HookA.java:212)
+	at stepdefinitions.mystepdefinitions_A.usera_can_see_something_on_something_location(mystepdefinitions_A.java:254)
+	at ?.And UserA can see &quot;close&quot; on &quot;contact.details.right.panel.close.button.text.area***************&quot; location(src/test/resources/features/Contacts_TCs_2.feature:12)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1788034018", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1788034018'><pre>cucumber.runtime.CucumberException: java.lang.Exception: Sth went wrong! Upps! taking a screenshoot!
 	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
 	at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -145,13 +144,12 @@ Caused by: java.lang.NullPointerException
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.NullPointerException
-	at utility.HookA.getByA(HookA.java:234)
-	at utility.HookA.right_click_A(HookA.java:159)
-	at stepdefinitions.mystepdefinitions_A.usera_right_clicks_on_something(mystepdefinitions_A.java:144)
-	at ?.And UserA right clicks on &quot;Contact.Semra.Boyaci******************&quot;(src/test/resources/features/Contacts_TCs_3.feature:17)
+Caused by: java.lang.Exception: Sth went wrong! Upps! taking a screenshoot!
+	at utility.HookA.verifyA(HookA.java:212)
+	at stepdefinitions.mystepdefinitions_A.usera_can_see_something_on_something_location(mystepdefinitions_A.java:254)
+	at ?.And UserA can see &quot;close&quot; on &quot;contact.details.right.panel.close.button.text.area***************&quot; location(src/test/resources/features/Contacts_TCs_2.feature:12)
 </pre></div></td>
-<td>43</td>
+<td>38</td>
 <td>runners.Test_Test@52a86356</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -162,26 +160,33 @@ Caused by: java.lang.NullPointerException
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='runners.Test_Test.feature()'><b>feature</b><br>Test class: runners.Test_Test<br>Test method: Runs Cucumber Feature<br>Parameters: User can search a contact from the search bar</td>
+<td title='runners.Test_Test.feature()'><b>feature</b><br>Test class: runners.Test_Test<br>Test method: Runs Cucumber Feature<br>Parameters: User can search a contact from the search bar<br/>
+<a href="#Output-257459516" onClick='toggleBox("Output-257459516", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-257459516" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-257459516">
+Starting the Application A!<br/>
+</div>
+</td>
 <td></td>
-<td>34</td>
+<td>44</td>
 <td>runners.Test_Test@52a86356</td></tr>
 <tr>
-<td title='runners.Test_Test.feature()'><b>feature</b><br>Test class: runners.Test_Test<br>Test method: Runs Cucumber Feature<br>Parameters: User can view the details of a contact</td>
+<td title='runners.Test_Test.feature()'><b>feature</b><br>Test class: runners.Test_Test<br>Test method: Runs Cucumber Feature<br>Parameters: User can add contact, then add it to favorites, remove from favorites and remove from contacts</td>
 <td></td>
-<td>10</td>
+<td>24</td>
 <td>runners.Test_Test@52a86356</td></tr>
 <tr>
 <td title='runners.Test_Test.feature()'><b>feature</b><br>Test class: runners.Test_Test<br>Test method: Runs Cucumber Feature<br>Parameters: Verify UserA can search and add contacts then create a group, then add members to group and delete the group.<br/>
-<a href="#Output-411876574" onClick='toggleBox("Output-411876574", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-1825071442" onClick='toggleBox("Output-1825071442", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-411876574" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-411876574">
+<a href="#Output-1825071442" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1825071442">
 Exiting the Application A!<br/>
 </div>
 </td>
 <td></td>
-<td>74</td>
+<td>73</td>
 <td>runners.Test_Test@52a86356</td></tr>
 </table><p>
 </body>

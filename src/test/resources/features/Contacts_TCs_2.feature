@@ -12,4 +12,6 @@ Feature: User can view the details of a contact
       And UserA can see "close" on "contact.details.right.panel.close.button.text.area" location
       And UserA clicks "contact.details.right.panel.close.button"
       And UserA waits for "3000" seconds
+      And UserA clicks "contacts.search.close.button"
+      And UserA waits for "3000" seconds
       

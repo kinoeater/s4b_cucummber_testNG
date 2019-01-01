@@ -2,25 +2,28 @@
 <testng-results skipped="0" failed="1" ignored="0" total="4" passed="3">
   <reporter-output>
     <line>
+      <![CDATA[Starting the Application A!]]>
+    </line>
+    <line>
       <![CDATA[Exited the Application A!]]>
     </line>
     <line>
       <![CDATA[Exiting the Application A!]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="163454" started-at="2019-01-01T18:52:11Z" finished-at="2019-01-01T18:54:55Z">
+  <suite name="Default suite" duration-ms="182014" started-at="2019-01-01T21:00:12Z" finished-at="2019-01-01T21:03:14Z">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test@52a86356]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Default test" duration-ms="163454" started-at="2019-01-01T18:52:11Z" finished-at="2019-01-01T18:54:55Z">
+    <test name="Default test" duration-ms="182014" started-at="2019-01-01T21:00:12Z" finished-at="2019-01-01T21:03:14Z">
       <class name="runners.Test_Test">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:runners.Test_Test@52a86356]" name="setUpClass" is-config="true" duration-ms="266" started-at="2019-01-01T18:52:11Z" finished-at="2019-01-01T18:52:12Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:runners.Test_Test@52a86356]" name="setUpClass" is-config="true" duration-ms="344" started-at="2019-01-01T21:00:12Z" finished-at="2019-01-01T21:00:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test@52a86356]" name="feature" duration-ms="34949" started-at="2019-01-01T18:52:12Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-01T18:52:47Z">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test@52a86356]" name="feature" duration-ms="44583" started-at="2019-01-01T21:00:13Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-01T21:00:57Z">
           <params>
             <param index="0">
               <value>
@@ -29,9 +32,12 @@
             </param>
           </params>
           <reporter-output>
+            <line>
+              <![CDATA[Starting the Application A!]]>
+            </line>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test@52a86356]" name="feature" duration-ms="10604" started-at="2019-01-01T18:52:47Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-01T18:52:57Z">
+        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test@52a86356]" name="feature" duration-ms="38769" started-at="2019-01-01T21:00:57Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-01T21:01:36Z">
           <params>
             <param index="0">
               <value>
@@ -39,23 +45,12 @@
               </value>
             </param>
           </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- feature -->
-        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test@52a86356]" name="feature" duration-ms="43404" started-at="2019-01-01T18:52:57Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-01T18:53:41Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[User can add contact, then add it to favorites, remove from favorites and remove from contacts]]>
-              </value>
-            </param>
-          </params>
           <exception class="cucumber.runtime.CucumberException">
             <message>
-              <![CDATA[java.lang.NullPointerException]]>
+              <![CDATA[java.lang.Exception: Sth went wrong! Upps! taking a screenshoot!]]>
             </message>
             <full-stacktrace>
-              <![CDATA[cucumber.runtime.CucumberException: java.lang.NullPointerException
+              <![CDATA[cucumber.runtime.CucumberException: java.lang.Exception: Sth went wrong! Upps! taking a screenshoot!
 at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
 at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -83,11 +78,10 @@ at org.testng.TestNG.run(TestNG.java:1017)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.NullPointerException
-at utility.HookA.getByA(HookA.java:234)
-at utility.HookA.right_click_A(HookA.java:159)
-at stepdefinitions.mystepdefinitions_A.usera_right_clicks_on_something(mystepdefinitions_A.java:144)
-at ✽.And UserA right clicks on "Contact.Semra.Boyaci******************"(src/test/resources/features/Contacts_TCs_3.feature:17)
+Caused by: java.lang.Exception: Sth went wrong! Upps! taking a screenshoot!
+at utility.HookA.verifyA(HookA.java:212)
+at stepdefinitions.mystepdefinitions_A.usera_can_see_something_on_something_location(mystepdefinitions_A.java:254)
+at ✽.And UserA can see "close" on "contact.details.right.panel.close.button.text.area***************" location(src/test/resources/features/Contacts_TCs_2.feature:12)
 ]]>
             </full-stacktrace>
           </exception> <!-- cucumber.runtime.CucumberException -->
@@ -97,7 +91,18 @@ at ✽.And UserA right clicks on "Contact.Semra.Boyaci******************"(src/te
             </line>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test@52a86356]" name="feature" duration-ms="74072" started-at="2019-01-01T18:53:41Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-01T18:54:55Z">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test@52a86356]" name="feature" duration-ms="24774" started-at="2019-01-01T21:01:36Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-01T21:02:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User can add contact, then add it to favorites, remove from favorites and remove from contacts]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test@52a86356]" name="feature" duration-ms="73346" started-at="2019-01-01T21:02:01Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-01T21:03:14Z">
           <params>
             <param index="0">
               <value>
@@ -111,7 +116,7 @@ at ✽.And UserA right clicks on "Contact.Semra.Boyaci******************"(src/te
             </line>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:runners.Test_Test@52a86356]" name="tearDownClass" is-config="true" duration-ms="15" started-at="2019-01-01T18:54:55Z" finished-at="2019-01-01T18:54:55Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:runners.Test_Test@52a86356]" name="tearDownClass" is-config="true" duration-ms="31" started-at="2019-01-01T21:03:14Z" finished-at="2019-01-01T21:03:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

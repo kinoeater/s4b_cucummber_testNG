@@ -18,6 +18,7 @@ import org.testng.Reporter;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -27,7 +28,7 @@ import utility.HookA;
 
 public class mystepdefinitions_A extends HookA {
 
-		
+
 	static Properties selectors = new Properties();
 	
     static {
@@ -39,7 +40,39 @@ public class mystepdefinitions_A extends HookA {
         }
     }
     
-   @After ("@UserA") 
+    
+    
+    @Before ("@UserA") 
+    public void beforeScenarioA() throws InterruptedException, IOException, ParseException{
+  
+    	try {
+            
+    		Adriver.getWindowHandle();
+             } 
+    	
+    	catch (NullPointerException e) {
+            
+        	
+        	Reporter.log("Starting the Application A!"); 
+		    System.out.println("Starting the Application A!");
+	    	
+	    	RemoteLaunch_Client_A();
+	    	typeA(selectors.getProperty("login.kandyusername"), selectors.getProperty("userA.kandy.name"));
+	    	typeA(selectors.getProperty("login.kandyauthname"), selectors.getProperty("userA.kandy.auth"));
+	    	typeA(selectors.getProperty("login.kandypassword"), selectors.getProperty("userA.kandy.pass"));
+	    	clickA(selectors.getProperty("login.kandysubmit"));         	typeA(selectors.getProperty("login.skypeusername"), selectors.getProperty("userA.skype.name"));
+	    	typeA(selectors.getProperty("login.skypepassword"), selectors.getProperty("userA.skype.pass"));
+	    	clickA(selectors.getProperty("login.skypesubmit")); 
+	    	clickA(selectors.getProperty("contacts.credentialssaveno"));
+	    	Thread.sleep(3000);
+        	
+        }
+    	
+    
+            }  
+    
+    
+    @After ("@UserA") 
     public void afterScenarioA(Scenario scenario) throws InterruptedException, IOException, ParseException{
   
 		   
