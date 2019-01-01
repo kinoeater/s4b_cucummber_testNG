@@ -49,16 +49,15 @@ public class mystepdefinitions_A extends HookA {
 	    	Adriver.quit();
 	    	Thread.sleep(5000);
 	    	Adriver.quit();
-//	    	RemoteLaunch_Client_A();
-//	    	typeA(selectors.getProperty("login.kandyusername"), selectors.getProperty("userA.kandy.name"));
-//	    	typeA(selectors.getProperty("login.kandyauthname"), selectors.getProperty("userA.kandy.auth"));
-//	    	typeA(selectors.getProperty("login.kandypassword"), selectors.getProperty("userA.kandy.pass"));
-//	    	clickA(selectors.getProperty("login.kandysubmit"));   
-//	      	typeA(selectors.getProperty("login.skypeusername"), selectors.getProperty("userA.skype.name"));
-//	    	typeA(selectors.getProperty("login.skypepassword"), selectors.getProperty("userA.skype.pass"));
-//	    	clickA(selectors.getProperty("login.skypesubmit")); 
-//	    	Adriver.findElement(By.id(selectors.getProperty("contacts.credentialssaveno"))).click();
-//	    	Thread.sleep(3000);
+	    	RemoteLaunch_Client_A();
+	    	typeA(selectors.getProperty("login.kandyusername"), selectors.getProperty("userA.kandy.name"));
+	    	typeA(selectors.getProperty("login.kandyauthname"), selectors.getProperty("userA.kandy.auth"));
+	    	typeA(selectors.getProperty("login.kandypassword"), selectors.getProperty("userA.kandy.pass"));
+	    	clickA(selectors.getProperty("login.kandysubmit"));         	typeA(selectors.getProperty("login.skypeusername"), selectors.getProperty("userA.skype.name"));
+	    	typeA(selectors.getProperty("login.skypepassword"), selectors.getProperty("userA.skype.pass"));
+	    	clickA(selectors.getProperty("login.skypesubmit")); 
+	    	clickA(selectors.getProperty("contacts.credentialssaveno"));
+	    	Thread.sleep(3000);
 	    	
 	    	 
 	    	}

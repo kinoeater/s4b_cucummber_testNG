@@ -24,7 +24,7 @@ Feature: User should run the basic sanity test cases
       And UserA waits for "2000" seconds
       And UserA can see "close" on "contact.details.right.panel.close.button.text.area" location
       And UserA clicks "contact.details.right.panel.close.button"
-      And UserA clicks "contacts.search.close2.button"
+      And UserA clicks "contacts.search.close.button"
       And UserA waits for "3000" seconds
       
   Scenario: User can add contact, then add it to favorites, remove from favorites and remove from contacts   
