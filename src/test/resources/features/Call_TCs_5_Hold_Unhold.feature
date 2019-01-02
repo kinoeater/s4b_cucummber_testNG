@@ -1,14 +1,11 @@
 @desktop @UserA @UserB
-Feature: Verify that User can stop and start the video successfully	
+Feature: Verify that User A and User B logs in and make a call, then hold-unhold the call.	
 
-  Scenario: User A logins to S4B Web RTC with correct credentials and do not save the credentials
-    Given UserA logs into kandy with "011902165222512@172.28.247.41" "myol" "3456"
-      And UserA logs into skype with "myol@gbsolutions.work" "Lkjh1234"
-     When UserA clicks "contacts.credentialssaveno"
-      And UserA waits for "3000" seconds
-    Given UserB logs into kandy with "011902165225323@172.28.247.41" "muratc" "3456"
-      And UserB logs into skype with "muratc@gbsolutions.work" "Lkjh1234"
-     When UserB clicks "contacts.credentialssaveno"
+  Scenario: Hold-Unhold the call
+    Given UserA can see "Calls" on "calls.tab.text" location
+      And UserA clicks "calls.tab"
+    Given UserB can see "Calls" on "calls.tab.text" location
+      And UserB clicks "calls.tab"
       And UserB waits for "3000" seconds 
       And UserB clicks "calls.tab"
       And UserB clicks "calls.dialbutton"
@@ -20,16 +17,14 @@ Feature: Verify that User can stop and start the video successfully
       And UserA clicks "calls.tab"
       And UserA clicks "calls.answer.button"
       And UserA waits for "3000" seconds
-      And UserA can see "videocam" on "calls.actions.camera.button.icon" location
-      And UserA clicks "calls.actions.camera.button"
+      And UserA can see "pause" on "calls.actions.hold.button.icon" location
+      And UserA clicks "calls.actions.hold.button"
+      And UserA waits for "7000" seconds
+      And UserA can see "play_arrow" on "calls.actions.hold.button.icon" location
+      And UserA clicks "calls.actions.hold.button"
       And UserA waits for "3000" seconds
-      And UserA can see "videocam_off" on "calls.actions.camera.button.icon" location
-      And UserA clicks "calls.actions.camera.button"
-      And UserA waits for "3000" seconds
-      And UserA can see "videocam" on "calls.actions.camera.button.icon" location
       And UserA clicks "calls.actions.callend.button"
       And UserA waits for "3000" seconds
-      And UserA clicks "settings.tab"
       And UserA clicks "settings.tab"
       And UserA clicks "settings.logout.button" 
       And UserA clicks "settings.popuplogout"

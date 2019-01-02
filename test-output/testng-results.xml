@@ -1,69 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="1" failed="0" ignored="0" total="1" passed="0">
   <reporter-output>
-    <line>
-      <![CDATA[Starting the Application B!]]>
-    </line>
-    <line>
-      <![CDATA[Starting the Application A!]]>
-    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="117511" started-at="2019-01-02T08:36:49Z" finished-at="2019-01-02T08:38:46Z">
+  <suite name="Default suite" duration-ms="389" started-at="2019-01-02T11:18:24Z" finished-at="2019-01-02T11:18:24Z">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test1@52a86356]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test@52a86356]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Default test" duration-ms="117511" started-at="2019-01-02T08:36:49Z" finished-at="2019-01-02T08:38:46Z">
-      <class name="runners.Test_Test1">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:runners.Test_Test1@52a86356]" name="setUpClass" is-config="true" duration-ms="250" started-at="2019-01-02T08:36:49Z" finished-at="2019-01-02T08:36:49Z">
+    <test name="Default test" duration-ms="389" started-at="2019-01-02T11:18:24Z" finished-at="2019-01-02T11:18:24Z">
+      <class name="runners.Test_Test">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:runners.Test_Test@52a86356]" name="setUpClass" is-config="true" duration-ms="266" started-at="2019-01-02T11:18:24Z" finished-at="2019-01-02T11:18:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test1@52a86356]" name="feature" duration-ms="67236" started-at="2019-01-02T08:36:49Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-02T08:37:56Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Verify that User A and User B logs in and make a call.]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="SKIP" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test@52a86356]" name="feature" duration-ms="0" started-at="2019-01-02T11:18:24Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-02T11:18:24Z">
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[java.lang.IllegalArgumentException: Not a file or directory: D:\work\s4bautomation\s4b_3_client\src\test\resources\features\Call_TCs_3_Camera_On_Off]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: java.lang.IllegalArgumentException: Not a file or directory: D:\work\s4bautomation\s4b_3_client\src\test\resources\features\Call_TCs_3_Camera_On_Off
+at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:49)
+at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:131)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:706)
+at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:49)
+at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:37)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:923)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.IllegalArgumentException: Not a file or directory: D:\work\s4bautomation\s4b_3_client\src\test\resources\features\Call_TCs_3_Camera_On_Off
+at cucumber.runtime.io.FileResourceIterator$FileIterator.<init>(FileResourceIterator.java:54)
+at cucumber.runtime.io.FileResourceIterator.<init>(FileResourceIterator.java:20)
+at cucumber.runtime.io.FileResourceIterable.iterator(FileResourceIterable.java:19)
+at cucumber.runtime.model.CucumberFeature.loadFromFeaturePath(CucumberFeature.java:103)
+at cucumber.runtime.model.CucumberFeature.load(CucumberFeature.java:54)
+at cucumber.runtime.model.CucumberFeature.load(CucumberFeature.java:34)
+at cucumber.runtime.RuntimeOptions.cucumberFeatures(RuntimeOptions.java:239)
+at cucumber.api.testng.TestNGCucumberRunner.getFeatures(TestNGCucumberRunner.java:85)
+at cucumber.api.testng.TestNGCucumberRunner.provideFeatures(TestNGCucumberRunner.java:94)
+at cucumber.api.testng.AbstractTestNGCucumberTests.features(AbstractTestNGCucumberTests.java:29)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:74)
+at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:45)
+... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
-            <line>
-              <![CDATA[Starting the Application B!]]>
-            </line>
-            <line>
-              <![CDATA[Starting the Application A!]]>
-            </line>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test1@52a86356]" name="feature" duration-ms="28453" started-at="2019-01-02T08:37:56Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-02T08:38:25Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Verify that User A and User B logs in and make a call, then mute-unmute the call.]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test1@52a86356]" name="feature" duration-ms="21460" started-at="2019-01-02T08:38:25Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-02T08:38:46Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Verify that User can stop and start the video successfully]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:runners.Test_Test1@52a86356]" name="tearDownClass" is-config="true" duration-ms="25" started-at="2019-01-02T08:38:46Z" finished-at="2019-01-02T08:38:46Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:runners.Test_Test@52a86356]" name="tearDownClass" is-config="true" duration-ms="27" started-at="2019-01-02T11:18:24Z" finished-at="2019-01-02T11:18:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- runners.Test_Test1 -->
+      </class> <!-- runners.Test_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
