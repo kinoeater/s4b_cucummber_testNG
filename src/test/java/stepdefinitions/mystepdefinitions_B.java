@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -11,6 +12,7 @@ import org.testng.Reporter;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -40,24 +42,70 @@ public class mystepdefinitions_B extends HookB {
         return Bdriver;
     }
     
-    @After ("@UserB") 
-    public void afterScenarioB(Scenario scenario) throws InterruptedException, IOException{
+    @Before ("@UserB") 
+    public void beforeScenarioB(Scenario scenario) throws InterruptedException, IOException, ParseException{
   
+    	try {
+            
+    		Bdriver.getWindowHandle();
+             } 
+    	
+    	catch (NullPointerException e) {
+            
+        	
+        	Reporter.log("Starting the Application B!"); 
+		    System.out.println("Starting the Application B!");
+	    	
+	    	RemoteLaunch_Client_B();
+	    	typeB(selectors.getProperty("login.kandyusername"), selectors.getProperty("userB.kandy.name"));
+	    	typeB(selectors.getProperty("login.kandyauthname"), selectors.getProperty("userB.kandy.auth"));
+	    	typeB(selectors.getProperty("login.kandypassword"), selectors.getProperty("userB.kandy.pass"));
+	    	clickB(selectors.getProperty("login.kandysubmit"));         
+	    	typeB(selectors.getProperty("login.skypeusername"), selectors.getProperty("userB.skype.name"));
+	    	typeB(selectors.getProperty("login.skypepassword"), selectors.getProperty("userB.skype.pass"));
+	    	clickB(selectors.getProperty("login.skypesubmit")); 
+	    	clickB(selectors.getProperty("contacts.credentialssaveno"));
+	    	Thread.sleep(3000);
+        	
+        }
+    	
+    
+            }  
+    
+    
+    @After ("@UserB") 
+    public void afterScenarioA(Scenario scenario) throws InterruptedException, IOException, ParseException{
+  
+		   
 	   
 	   if (scenario.isFailed()) {
-		   Reporter.log("Exited the Application B!"); 
+		    Reporter.log("Exited the Application B!"); 
 	    	Bdriver.quit();
 	    	Thread.sleep(5000);
-		}
+	    	Bdriver.quit();
+	    	RemoteLaunch_Client_B();
+	    	typeB(selectors.getProperty("login.kandyusername"), selectors.getProperty("userB.kandy.name"));
+	    	typeB(selectors.getProperty("login.kandyauthname"), selectors.getProperty("userB.kandy.auth"));
+	    	typeB(selectors.getProperty("login.kandypassword"), selectors.getProperty("userB.kandy.pass"));
+	    	clickB(selectors.getProperty("login.kandysubmit"));         	
+	    	typeB(selectors.getProperty("login.skypeusername"), selectors.getProperty("userB.skype.name"));
+	    	typeB(selectors.getProperty("login.skypepassword"), selectors.getProperty("userB.skype.pass"));
+	    	clickB(selectors.getProperty("login.skypesubmit")); 
+	    	clickB(selectors.getProperty("contacts.credentialssaveno"));
+	    	Thread.sleep(3000);
+	    	
+	    	 
+	    	}
 	   
 	   else {
 		   
-		   System.out.println("Feature passed!");
-	   }
+		   System.out.println(scenario + "Passed!");
+	        
+	        }
       
     
-    }  
-        
+            }  
+    
     
     @Given("^UserB test method$")
     public void userb_test_method() throws Throwable {

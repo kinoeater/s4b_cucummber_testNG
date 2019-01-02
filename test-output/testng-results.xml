@@ -1,126 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="4" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
+    <line>
+      <![CDATA[Starting the Application B!]]>
+    </line>
     <line>
       <![CDATA[Starting the Application A!]]>
     </line>
-    <line>
-      <![CDATA[Exited the Application A!]]>
-    </line>
-    <line>
-      <![CDATA[Exiting the Application A!]]>
-    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="182014" started-at="2019-01-01T21:00:12Z" finished-at="2019-01-01T21:03:14Z">
+  <suite name="Default suite" duration-ms="117511" started-at="2019-01-02T08:36:49Z" finished-at="2019-01-02T08:38:46Z">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test@52a86356]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test1@52a86356]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Default test" duration-ms="182014" started-at="2019-01-01T21:00:12Z" finished-at="2019-01-01T21:03:14Z">
-      <class name="runners.Test_Test">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:runners.Test_Test@52a86356]" name="setUpClass" is-config="true" duration-ms="344" started-at="2019-01-01T21:00:12Z" finished-at="2019-01-01T21:00:13Z">
+    <test name="Default test" duration-ms="117511" started-at="2019-01-02T08:36:49Z" finished-at="2019-01-02T08:38:46Z">
+      <class name="runners.Test_Test1">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:runners.Test_Test1@52a86356]" name="setUpClass" is-config="true" duration-ms="250" started-at="2019-01-02T08:36:49Z" finished-at="2019-01-02T08:36:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test@52a86356]" name="feature" duration-ms="44583" started-at="2019-01-01T21:00:13Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-01T21:00:57Z">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test1@52a86356]" name="feature" duration-ms="67236" started-at="2019-01-02T08:36:49Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-02T08:37:56Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[User can search a contact from the search bar]]>
+                <![CDATA[Verify that User A and User B logs in and make a call.]]>
               </value>
             </param>
           </params>
           <reporter-output>
+            <line>
+              <![CDATA[Starting the Application B!]]>
+            </line>
             <line>
               <![CDATA[Starting the Application A!]]>
             </line>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test@52a86356]" name="feature" duration-ms="38769" started-at="2019-01-01T21:00:57Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-01T21:01:36Z">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test1@52a86356]" name="feature" duration-ms="28453" started-at="2019-01-02T08:37:56Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-02T08:38:25Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[User can view the details of a contact]]>
-              </value>
-            </param>
-          </params>
-          <exception class="cucumber.runtime.CucumberException">
-            <message>
-              <![CDATA[java.lang.Exception: Sth went wrong! Upps! taking a screenshoot!]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[cucumber.runtime.CucumberException: java.lang.Exception: Sth went wrong! Upps! taking a screenshoot!
-at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
-at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.Exception: Sth went wrong! Upps! taking a screenshoot!
-at utility.HookA.verifyA(HookA.java:212)
-at stepdefinitions.mystepdefinitions_A.usera_can_see_something_on_something_location(mystepdefinitions_A.java:254)
-at ✽.And UserA can see "close" on "contact.details.right.panel.close.button.text.area***************" location(src/test/resources/features/Contacts_TCs_2.feature:12)
-]]>
-            </full-stacktrace>
-          </exception> <!-- cucumber.runtime.CucumberException -->
-          <reporter-output>
-            <line>
-              <![CDATA[Exited the Application A!]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test@52a86356]" name="feature" duration-ms="24774" started-at="2019-01-01T21:01:36Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-01T21:02:01Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[User can add contact, then add it to favorites, remove from favorites and remove from contacts]]>
+                <![CDATA[Verify that User A and User B logs in and make a call, then mute-unmute the call.]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test@52a86356]" name="feature" duration-ms="73346" started-at="2019-01-01T21:02:01Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-01T21:03:14Z">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test1@52a86356]" name="feature" duration-ms="21460" started-at="2019-01-02T08:38:25Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-02T08:38:46Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Verify UserA can search and add contacts then create a group, then add members to group and delete the group.]]>
+                <![CDATA[Verify that User can stop and start the video successfully]]>
               </value>
             </param>
           </params>
           <reporter-output>
-            <line>
-              <![CDATA[Exiting the Application A!]]>
-            </line>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:runners.Test_Test@52a86356]" name="tearDownClass" is-config="true" duration-ms="31" started-at="2019-01-01T21:03:14Z" finished-at="2019-01-01T21:03:14Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:runners.Test_Test1@52a86356]" name="tearDownClass" is-config="true" duration-ms="25" started-at="2019-01-02T08:38:46Z" finished-at="2019-01-02T08:38:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- runners.Test_Test -->
+      </class> <!-- runners.Test_Test1 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

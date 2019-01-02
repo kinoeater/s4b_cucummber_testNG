@@ -34,7 +34,7 @@ public class HookB {
     	public static void RemoteLaunch_Client_B() throws InterruptedException, MalformedURLException {
  		
 		String BinaryPathB="D:\\ConnectMe_Desktop_forSVAutomation\\ConnectMe Desktop - forSVAutomation.exe";
-		String huburl="http://217.78.102.224:4444/wd/hub";
+		String huburl="http://217.78.102.126:4444/wd/hub";
 		
 		ChromeOptions options = new ChromeOptions();
  		options.setBinary(BinaryPathB);
