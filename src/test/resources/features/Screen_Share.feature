@@ -2,14 +2,6 @@
 Feature: Verify that User A and User B logs in and make a call, then screen can be shared.
 
   Scenario: Screen Share
-    Given UserA logs into kandy with "011902165222512@172.28.247.41" "myol" "3456"
-      And UserA logs into skype with "myol@gbsolutions.work" "Lkjh1234"
-     When UserA clicks "contacts.credentialssaveno"
-      And UserA waits for "3000" seconds
-    Given UserB logs into kandy with "011902165225323@172.28.247.41" "muratc" "3456"
-      And UserB logs into skype with "muratc@gbsolutions.work" "Lkjh1234"
-     When UserB clicks "contacts.credentialssaveno"
-      And UserB waits for "3000" seconds 
       And UserB clicks "calls.tab"
       And UserB clicks "calls.dialbutton"
       And UserB clicks "calls.dialpadinput"
@@ -39,7 +31,6 @@ Feature: Verify that User A and User B logs in and make a call, then screen can 
       And UserA clicks "settings.popuplogout"
       And UserA waits for "3000" seconds
       And UserA exits client
-      And UserB clicks "settings.tab"
       And UserB clicks "settings.tab"
       And UserB clicks "settings.logout.button" 
       And UserB clicks "settings.popuplogout"
