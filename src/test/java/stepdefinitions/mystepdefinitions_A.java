@@ -10,9 +10,13 @@ import java.util.Set;
 
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
 
@@ -23,6 +27,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import cucumber.runtime.CucumberException;
 import utility.HookA;
 
 
@@ -86,7 +91,8 @@ public class mystepdefinitions_A extends HookA {
 	    	typeA(selectors.getProperty("login.kandyusername"), selectors.getProperty("userA.kandy.name"));
 	    	typeA(selectors.getProperty("login.kandyauthname"), selectors.getProperty("userA.kandy.auth"));
 	    	typeA(selectors.getProperty("login.kandypassword"), selectors.getProperty("userA.kandy.pass"));
-	    	clickA(selectors.getProperty("login.kandysubmit"));         	typeA(selectors.getProperty("login.skypeusername"), selectors.getProperty("userA.skype.name"));
+	    	clickA(selectors.getProperty("login.kandysubmit"));         	
+	    	typeA(selectors.getProperty("login.skypeusername"), selectors.getProperty("userA.skype.name"));
 	    	typeA(selectors.getProperty("login.skypepassword"), selectors.getProperty("userA.skype.pass"));
 	    	clickA(selectors.getProperty("login.skypesubmit")); 
 	    	clickA(selectors.getProperty("contacts.credentialssaveno"));
@@ -135,6 +141,332 @@ public class mystepdefinitions_A extends HookA {
 	 		    }
 	   
 	   
+	   
+	   @Given("^UserA is launched with correct UC and skype credentials$")
+	    public void usera_is_launched_with_correct_uc_and_skype_credentials() throws Throwable {
+	     
+		  		   
+			   
+		   
+		    	 try {
+		    		    RemoteLaunch_Client_A();
+				    	typeA(selectors.getProperty("login.kandyusername"), selectors.getProperty("userA.kandy.name"));
+				    	typeA(selectors.getProperty("login.kandyauthname"), selectors.getProperty("userA.kandy.auth"));
+				    	typeA(selectors.getProperty("login.kandypassword"), selectors.getProperty("userA.kandy.pass"));
+				    	clickA(selectors.getProperty("login.kandysubmit"));         	
+				    	typeA(selectors.getProperty("login.skypeusername"), selectors.getProperty("userA.skype.name"));
+				    	typeA(selectors.getProperty("login.skypepassword"), selectors.getProperty("userA.skype.pass"));
+				    	clickA(selectors.getProperty("login.skypesubmit")); 
+				    	clickA(selectors.getProperty("contacts.credentialssaveno"));
+				    	Thread.sleep(3000);
+				    	verifyA(selectors.getProperty("contacts.creategroup.button.visible.text"),selectors.getProperty("contacts.creategroup.button"));
+				    	
+		    	 } 
+		    	 
+		    	 	    	 
+		    	 catch (NoSuchElementException e) {
+		 	            
+		    		 teardownA();
+		    		 Assert.fail("Feature Failed");
+		    		 
+		 	        }
+		    	 
+		    	 catch (NullPointerException e) {
+		 	            
+		    		 teardownA();
+		    		 Assert.fail("Feature Failed");
+		    		 
+		 	        }
+		    	 
+		    	 
+                catch (IOException e) {
+		 	            
+                	 teardownA();
+		    		 Assert.fail("Feature Failed");
+		    		 
+		 	        }
+	    	 
+		    	 
+	    	 
+                catch (StaleElementReferenceException e) {
+		 	            
+                	 teardownA();
+		    		 Assert.fail("Feature Failed");
+		    		
+		 	        }
+		    	 
+	    	 
+		    	 	catch (ElementNotVisibleException e) {
+		 	            
+		    		 teardownA();
+		    		 Assert.fail("Feature Failed");
+		    		 
+		 	        }
+		    	 
+		    	 
+		    	
+		   
+		    		catch ( CucumberException e) {
+		 	            
+			    		 
+			    		 teardownA();
+			    		 Assert.fail("Feature Failed");
+			 	        }
+		   
+		    
+		    	 
+		    	 finally
+		    	 
+		    	 {
+		    	 
+		    		 teardownA();
+		    			    	 
+		    	 }
+	    
+	    }
+
+	   
+	   
+	   
+	   @Given("^UserA is launched with only UC and correct credentials$")
+	    public void usera_is_launched_with_only_uc_and_correct_credentials() throws Throwable {
+	        
+		   try {
+   		        RemoteLaunch_Client_A();
+		    	typeA(selectors.getProperty("login.kandyusername"), selectors.getProperty("userA.kandy.name"));
+		    	typeA(selectors.getProperty("login.kandyauthname"), selectors.getProperty("userA.kandy.auth"));
+		    	typeA(selectors.getProperty("login.kandypassword"), selectors.getProperty("userA.kandy.pass"));
+		    	clickA(selectors.getProperty("login.kandysubmit")); 
+		    	clickA(selectors.getProperty("login.skypeskip"));  
+		    	clickA(selectors.getProperty("contacts.credentialssaveno"));
+		    	Thread.sleep(3000);
+		    	verifyA(selectors.getProperty("calls.tab.visible.text"),selectors.getProperty("contacts.creategroup.button"));
+		    	
+	        } 
+   	 
+   	 	    	 
+   	 catch (NoSuchElementException e) {
+	            
+   		 teardownA();
+   		 Assert.fail("Feature Failed");
+   		 
+	        }
+   	 
+   	 catch (NullPointerException e) {
+	            
+   		 teardownA();
+   		 Assert.fail("Feature Failed");
+   		 
+	        }
+   	 
+   	 
+       catch (IOException e) {
+	            
+       	 teardownA();
+   		 Assert.fail("Feature Failed");
+   		 
+	        }
+	 
+   	 
+	 
+       catch (StaleElementReferenceException e) {
+	            
+       	 teardownA();
+   		 Assert.fail("Feature Failed");
+   		
+	        }
+   	 
+	 
+   	 	catch (ElementNotVisibleException e) {
+	            
+   		 teardownA();
+   		 Assert.fail("Feature Failed");
+   		 
+	        }
+   	 
+   	 
+   	
+  
+   		catch ( CucumberException e) {
+	            
+	    		 
+	    		 teardownA();
+	    		 Assert.fail("Feature Failed");
+	 	        }
+  
+   
+   	 
+   	 finally
+   	 
+   	 {
+   	 
+   		 teardownA();
+   	
+   	 
+   	 }
+
+		   
+	    }
+
+	   
+	   @Given("^UserA is launched and try to login with incorrect UC credentials$")
+	    public void usera_is_launched_and_try_to_login_with_incorrect_uc_credentials() throws Throwable {
+	    
+		   try {
+	   		        RemoteLaunch_Client_A();
+			    	typeA(selectors.getProperty("login.kandyusername"), selectors.getProperty("incorrect.userA.kandy.name"));
+			    	typeA(selectors.getProperty("login.kandyauthname"), selectors.getProperty("userA.kandy.auth"));
+			    	typeA(selectors.getProperty("login.kandypassword"), selectors.getProperty("userA.kandy.pass"));
+			    	clickA(selectors.getProperty("login.kandysubmit")); 
+			    	Thread.sleep(3000);
+			    	verifyA(selectors.getProperty("UC.incorrect.login.visible.text"),selectors.getProperty("login.kandy.incorrect.credentials.warning"));
+			    	    	
+			    	
+		        } 
+	   	 
+	   	 	    	 
+	   	 catch (NoSuchElementException e) {
+		            
+	   		 teardownA();
+	   		 Assert.fail("Feature Failed");
+	   		 
+		        }
+	   	 
+	   	 catch (NullPointerException e) {
+		            
+	   		 teardownA();
+	   		 Assert.fail("Feature Failed");
+	   		 
+		        }
+	   	 
+	   	 
+	       catch (IOException e) {
+		            
+	       	 teardownA();
+	   		 Assert.fail("Feature Failed");
+	   		 
+		        }
+		 
+	   	 
+		 
+	       catch (StaleElementReferenceException e) {
+		            
+	       	 teardownA();
+	   		 Assert.fail("Feature Failed");
+	   		
+		        }
+	   	 
+		 
+	   	 	catch (ElementNotVisibleException e) {
+		            
+	   		 teardownA();
+	   		 Assert.fail("Feature Failed");
+	   		 
+		        }
+	   	 
+	   	 	
+	   		catch ( CucumberException e) {
+		            
+		    		 
+		    		 teardownA();
+		    		 Assert.fail("Feature Failed");
+		 	        }
+	  
+	   
+	   	 
+	   	 finally
+	   	 
+	   	 {
+	   	 
+	   		 teardownA();
+	   	
+	   	 
+	   	 }
+
+		   
+	    }
+	   
+	   
+	   
+	   @Given("^UserA is launched and use correct UC credentials incorrect skype credentials$")
+	    public void usera_is_launched_and_use_correct_uc_credentials_incorrect_skype_credentials() throws Throwable {
+	  
+		   try {
+   		    RemoteLaunch_Client_A();
+		    	typeA(selectors.getProperty("login.kandyusername"), selectors.getProperty("userA.kandy.name"));
+		    	typeA(selectors.getProperty("login.kandyauthname"), selectors.getProperty("userA.kandy.auth"));
+		    	typeA(selectors.getProperty("login.kandypassword"), selectors.getProperty("userA.kandy.pass"));
+		    	clickA(selectors.getProperty("login.kandysubmit"));         	
+		    	typeA(selectors.getProperty("login.skypeusername"), selectors.getProperty("incorrect.userA.skype.name"));
+		    	typeA(selectors.getProperty("login.skypepassword"), selectors.getProperty("userA.skype.pass"));
+		    	clickA(selectors.getProperty("login.skypesubmit")); 
+		    	Thread.sleep(3000);
+		    	verifyA(selectors.getProperty("skype.incorrect.login.visible.text"),selectors.getProperty("login.skype.incorrect.restart.button"));
+	        } 
+   	 
+   	 	    	 
+   	 catch (NoSuchElementException e) {
+	            
+   		 teardownA();
+   		 Assert.fail("Feature Failed");
+   		 
+	        }
+   	 
+   	 catch (NullPointerException e) {
+	            
+   		 teardownA();
+   		 Assert.fail("Feature Failed");
+   		 
+	        }
+   	 
+   	 
+       catch (IOException e) {
+	            
+       	 teardownA();
+   		 Assert.fail("Feature Failed");
+   		 
+	        }
+	 
+   	 
+	 
+       catch (StaleElementReferenceException e) {
+	            
+       	 teardownA();
+   		 Assert.fail("Feature Failed");
+   		
+	        }
+   	 
+	 
+   	 	catch (ElementNotVisibleException e) {
+	            
+   		 teardownA();
+   		 Assert.fail("Feature Failed");
+   		 
+	        }
+   	 
+   	 
+   	
+  
+   		catch ( CucumberException e) {
+	            
+	    		 
+	    		 teardownA();
+	    		 Assert.fail("Feature Failed");
+	 	        }
+  
+   
+   	 
+   	 finally
+   	 
+   	 {
+   	 
+   		 teardownA();
+   		
+   	 
+   	 }
+		   
+	    }
+
 	   
 	   @And("^UserA choose \"([^\"]*)\" to send message$")
 	    public void usera_choose_something_to_send_message(String strArg1) throws Throwable {
@@ -259,7 +591,7 @@ public class mystepdefinitions_A extends HookA {
     @And("^UserA enters \"([^\"]*)\" to \"([^\"]*)\"$")
     public void usera_enters_something_to_something(String strArg1, String strArg2) throws Throwable {
     	
-    	typeA(selectors.getProperty(strArg2), strArg1);
+    	typeA(selectors.getProperty(strArg2),strArg1);
     }
 
    

@@ -4,7 +4,7 @@
 <suite name="S4BDesktop" verbose="2">
 	<test name="S4B Cucumber Tests">
 		<classes>
-		<class name="runners.Login_Logout_Test"></class>  
+		<class name="runners.Login_Scenarios_Test"></class>  
 		<class name="runners.Contacts_Related_Test"></class> 
 	    <class name="runners.Send_Receive_Message_Test"></class>  
 	  	<class name="runners.CallP_Test"></class>    
