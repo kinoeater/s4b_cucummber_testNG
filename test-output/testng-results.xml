@@ -1,20 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="9" passed="9">
   <reporter-output>
+    <line>
+      <![CDATA[Starting the Application A!]]>
+    </line>
+    <line>
+      <![CDATA[Exiting the Application A!]]>
+    </line>
+    <line>
+      <![CDATA[Starting the Application A!]]>
+    </line>
+    <line>
+      <![CDATA[Exiting the Application A!]]>
+    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="26644" started-at="2019-01-03T08:12:50Z" finished-at="2019-01-03T08:13:16Z">
+  <suite name="S4BDesktop" duration-ms="358428" started-at="2019-01-04T21:14:43Z" finished-at="2019-01-04T21:20:41Z">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test@52a86356]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Contacts_Related_Test@5ec0a365]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Login_Scenarios_Test@78c03f1f]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Settings_Page_Test@4fe3c938]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Default test" duration-ms="26644" started-at="2019-01-03T08:12:50Z" finished-at="2019-01-03T08:13:16Z">
-      <class name="runners.Test_Test">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:runners.Test_Test@52a86356]" name="setUpClass" is-config="true" duration-ms="271" started-at="2019-01-03T08:12:50Z" finished-at="2019-01-03T08:12:50Z">
+    <test name="S4B Cucumber Tests" duration-ms="358428" started-at="2019-01-04T21:14:43Z" finished-at="2019-01-04T21:20:41Z">
+      <class name="runners.Settings_Page_Test">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:runners.Settings_Page_Test@4fe3c938]" name="setUpClass" is-config="true" duration-ms="47" started-at="2019-01-04T21:19:36Z" finished-at="2019-01-04T21:19:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Test_Test@52a86356]" name="feature" duration-ms="26265" started-at="2019-01-03T08:12:50Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-03T08:13:16Z">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Settings_Page_Test@4fe3c938]" name="feature" duration-ms="65407" started-at="2019-01-04T21:19:36Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-04T21:20:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Verify User A can checks the buttons in the settings page]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Starting the Application A!]]>
+            </line>
+            <line>
+              <![CDATA[Exiting the Application A!]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:runners.Settings_Page_Test@4fe3c938]" name="tearDownClass" is-config="true" duration-ms="32" started-at="2019-01-04T21:20:41Z" finished-at="2019-01-04T21:20:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- runners.Settings_Page_Test -->
+      <class name="runners.Login_Scenarios_Test">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:runners.Login_Scenarios_Test@78c03f1f]" name="setUpClass" is-config="true" duration-ms="267" started-at="2019-01-04T21:14:43Z" finished-at="2019-01-04T21:14:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Login_Scenarios_Test@78c03f1f]" name="feature" duration-ms="37344" started-at="2019-01-04T21:14:43Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-04T21:15:21Z">
           <params>
             <param index="0">
               <value>
@@ -25,11 +66,104 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:runners.Test_Test@52a86356]" name="tearDownClass" is-config="true" duration-ms="24" started-at="2019-01-03T08:13:16Z" finished-at="2019-01-03T08:13:16Z">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Login_Scenarios_Test@78c03f1f]" name="feature" duration-ms="26704" started-at="2019-01-04T21:15:21Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-04T21:15:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Verify that User A can login to UC and Skype successfully with correct credentials.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Login_Scenarios_Test@78c03f1f]" name="feature" duration-ms="22759" started-at="2019-01-04T21:15:47Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-04T21:16:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Verify that User A cannot login with incorrect UC credentials.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Login_Scenarios_Test@78c03f1f]" name="feature" duration-ms="45562" started-at="2019-01-04T21:16:10Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-04T21:16:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Verify that User A can login to UC and Skype successfully with correct credentials.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:runners.Login_Scenarios_Test@78c03f1f]" name="tearDownClass" is-config="true" duration-ms="31" started-at="2019-01-04T21:16:56Z" finished-at="2019-01-04T21:16:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- runners.Test_Test -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- runners.Login_Scenarios_Test -->
+      <class name="runners.Contacts_Related_Test">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:runners.Contacts_Related_Test@5ec0a365]" name="setUpClass" is-config="true" duration-ms="31" started-at="2019-01-04T21:16:56Z" finished-at="2019-01-04T21:16:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Contacts_Related_Test@5ec0a365]" name="feature" duration-ms="43947" started-at="2019-01-04T21:16:56Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-04T21:17:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User can search a contact from the search bar]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Starting the Application A!]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Contacts_Related_Test@5ec0a365]" name="feature" duration-ms="12893" started-at="2019-01-04T21:17:40Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-04T21:17:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User can view the details of a contact]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Contacts_Related_Test@5ec0a365]" name="feature" duration-ms="25620" started-at="2019-01-04T21:17:53Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-04T21:18:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User can add contact, then add it to favorites, remove from favorites and remove from contacts]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.Contacts_Related_Test@5ec0a365]" name="feature" duration-ms="77578" started-at="2019-01-04T21:18:18Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-01-04T21:19:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Verify UserA can search and add contacts then create a group, then add members to group and delete the group.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Exiting the Application A!]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:runners.Contacts_Related_Test@5ec0a365]" name="tearDownClass" is-config="true" duration-ms="46" started-at="2019-01-04T21:19:36Z" finished-at="2019-01-04T21:19:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- runners.Contacts_Related_Test -->
+    </test> <!-- S4B Cucumber Tests -->
+  </suite> <!-- S4BDesktop -->
 </testng-results>

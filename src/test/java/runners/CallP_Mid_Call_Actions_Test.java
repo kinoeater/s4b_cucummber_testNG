@@ -18,7 +18,7 @@ import org.testng.annotations.Test;
 
 @Test
 
-public class CallP_Test extends AbstractTestNGCucumberTests {
+public class CallP_Mid_Call_Actions_Test extends AbstractTestNGCucumberTests {
 
 	
 	}

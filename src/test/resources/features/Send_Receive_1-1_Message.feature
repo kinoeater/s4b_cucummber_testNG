@@ -26,7 +26,6 @@ Feature: Verify that User A sends Message to User B, and User B receives it.
       And UserA checks if the message from "Murat Cinar" received is "merhaba"   
       And UserB waits for "3000" seconds
       And UserA clicks "settings.tab"
-      And UserA clicks "settings.tab"
       And UserA clicks "settings.logout.button" 
       And UserA clicks "settings.popuplogout"
       And UserA waits for "3000" seconds

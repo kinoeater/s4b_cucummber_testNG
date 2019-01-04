@@ -1,11 +1,9 @@
 @desktop @UserA
-Feature: Verify User A can search and view the details of a contact.
+Feature: Verify User A can checks the buttons in the settings page
 
-  Scenario: User can search a contact from the search bar
-    Given UserA logs into kandy with "011902165222512@172.28.247.41" "myol" "3456"
-      And UserA logs into skype with "myol@gbsolutions.work" "Lkjh1234"
-     When UserA clicks "contacts.credentialssaveno"
-      And UserA waits for "1000" seconds
+  Scenario: Buttons in the settings page
+    Given UserA can see "Calls" on "calls.tab.text" location
+      And UserA can see "settings" on "settings.tab.text" location
       And UserA clicks "settings.tab"
       And UserA waits for "3000" seconds
       And UserA clicks "settings.show.contact.status.button"
@@ -36,4 +34,5 @@ Feature: Verify User A can search and view the details of a contact.
       And UserA clicks "settings.popuplogout"
       And UserA waits for "2000" seconds
       And UserA exits client 
+      And UserA waits for "3000" seconds
   

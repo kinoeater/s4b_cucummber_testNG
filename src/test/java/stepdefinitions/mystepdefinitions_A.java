@@ -13,6 +13,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.NoSuchSessionException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -73,7 +74,48 @@ public class mystepdefinitions_A extends HookA {
         	
         }
     	
+    	
+    	
+catch (NoSuchSessionException e) {
+            
+        	
+        	Reporter.log("Starting the Application A!"); 
+		    System.out.println("Starting the Application A!");
+	    	
+	    	RemoteLaunch_Client_A();
+	    	typeA(selectors.getProperty("login.kandyusername"), selectors.getProperty("userA.kandy.name"));
+	    	typeA(selectors.getProperty("login.kandyauthname"), selectors.getProperty("userA.kandy.auth"));
+	    	typeA(selectors.getProperty("login.kandypassword"), selectors.getProperty("userA.kandy.pass"));
+	    	clickA(selectors.getProperty("login.kandysubmit"));         	typeA(selectors.getProperty("login.skypeusername"), selectors.getProperty("userA.skype.name"));
+	    	typeA(selectors.getProperty("login.skypepassword"), selectors.getProperty("userA.skype.pass"));
+	    	clickA(selectors.getProperty("login.skypesubmit")); 
+	    	clickA(selectors.getProperty("contacts.credentialssaveno"));
+	    	Thread.sleep(3000);
+        	
+        }
+    	
+catch (CucumberException e) {
+            
+        	
+        	Reporter.log("Starting the Application A!"); 
+		    System.out.println("Starting the Application A!");
+	    	
+	    	RemoteLaunch_Client_A();
+	    	typeA(selectors.getProperty("login.kandyusername"), selectors.getProperty("userA.kandy.name"));
+	    	typeA(selectors.getProperty("login.kandyauthname"), selectors.getProperty("userA.kandy.auth"));
+	    	typeA(selectors.getProperty("login.kandypassword"), selectors.getProperty("userA.kandy.pass"));
+	    	clickA(selectors.getProperty("login.kandysubmit"));         	typeA(selectors.getProperty("login.skypeusername"), selectors.getProperty("userA.skype.name"));
+	    	typeA(selectors.getProperty("login.skypepassword"), selectors.getProperty("userA.skype.pass"));
+	    	clickA(selectors.getProperty("login.skypesubmit")); 
+	    	clickA(selectors.getProperty("contacts.credentialssaveno"));
+	    	Thread.sleep(3000);
+        	
+        }
     
+    	
+    	
+    	
+    	
             }  
     
     
@@ -160,7 +202,7 @@ public class mystepdefinitions_A extends HookA {
 				    	clickA(selectors.getProperty("contacts.credentialssaveno"));
 				    	Thread.sleep(3000);
 				    	verifyA(selectors.getProperty("contacts.creategroup.button.visible.text"),selectors.getProperty("contacts.creategroup.button"));
-				    	
+				    	teardownA();
 		    	 } 
 		    	 
 		    	 	    	 
@@ -237,10 +279,13 @@ public class mystepdefinitions_A extends HookA {
 		    	typeA(selectors.getProperty("login.kandyauthname"), selectors.getProperty("userA.kandy.auth"));
 		    	typeA(selectors.getProperty("login.kandypassword"), selectors.getProperty("userA.kandy.pass"));
 		    	clickA(selectors.getProperty("login.kandysubmit")); 
+		      	Thread.sleep(3000);
 		    	clickA(selectors.getProperty("login.skypeskip"));  
 		    	clickA(selectors.getProperty("contacts.credentialssaveno"));
 		    	Thread.sleep(3000);
-		    	verifyA(selectors.getProperty("calls.tab.visible.text"),selectors.getProperty("contacts.creategroup.button"));
+		    	verifyA(selectors.getProperty("calls.tab.visible.text"),selectors.getProperty("calls.tab.text"));
+		    	Thread.sleep(3000);
+		    	teardownA();
 		    	
 	        } 
    	 
@@ -320,8 +365,8 @@ public class mystepdefinitions_A extends HookA {
 			    	clickA(selectors.getProperty("login.kandysubmit")); 
 			    	Thread.sleep(3000);
 			    	verifyA(selectors.getProperty("UC.incorrect.login.visible.text"),selectors.getProperty("login.kandy.incorrect.credentials.warning"));
-			    	    	
-			    	
+			    	Thread.sleep(3000);
+			    	teardownA();
 		        } 
 	   	 
 	   	 	    	 
@@ -402,7 +447,9 @@ public class mystepdefinitions_A extends HookA {
 		    	clickA(selectors.getProperty("login.skypesubmit")); 
 		    	Thread.sleep(3000);
 		    	verifyA(selectors.getProperty("skype.incorrect.login.visible.text"),selectors.getProperty("login.skype.incorrect.restart.button"));
-	        } 
+		    	Thread.sleep(3000);
+		    	teardownA();
+		   } 
    	 
    	 	    	 
    	 catch (NoSuchElementException e) {

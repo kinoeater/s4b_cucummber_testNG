@@ -20,7 +20,7 @@ Feature: User can add contact, then add it to favorites, remove from favorites a
       And UserA right clicks on "Contact.Baris.Askin" 
       And UserA waits for "3000" seconds
       And UserA clicks "contact.remove.from.favorite"
-      And UserA waits for "2000" seconds
+      And UserA waits for "3000" seconds
       And UserA right clicks on "Contact.Baris.Askin" 
       And UserA clicks "contact.remove.contact"
       And UserA waits for "3000" seconds
