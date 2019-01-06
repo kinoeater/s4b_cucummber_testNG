@@ -30,9 +30,5 @@ Feature: Verify User A can checks the buttons in the settings page
       And UserA waits for "2000" seconds
       And UserA clicks "settings.ews.cancel"
       And UserA waits for "2000" seconds
-      And UserA clicks "settings.logout.button" 
-      And UserA clicks "settings.popuplogout"
-      And UserA waits for "2000" seconds
-      And UserA exits client 
-      And UserA waits for "3000" seconds
+   
   

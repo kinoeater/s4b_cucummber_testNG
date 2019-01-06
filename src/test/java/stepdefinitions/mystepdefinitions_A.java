@@ -1,23 +1,18 @@
 package stepdefinitions;
 
 import java.awt.Robot;
-import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
-import java.util.Set;
-
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.NoSuchSessionException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
 
@@ -54,6 +49,7 @@ public class mystepdefinitions_A extends HookA {
     	try {
             
     		Adriver.getWindowHandle();
+    		
              } 
     	
     	catch (NullPointerException e) {
@@ -159,12 +155,10 @@ catch (CucumberException e) {
     
 	   @Given("^UserA test method$")
 	    public void usera_test_method() throws Throwable {
+		
+	   String Text1=Adriver.findElement(By.xpath("//label[@for='audio-video-microphone']")).getText();
 		   
-		   System.out.println(Adriver.getWindowHandles());
-		   Thread.sleep(3000);
-		   System.out.println("Get window handle is "+Adriver.getWindowHandle());
-		   
-	 	    
+	 	    System.out.println(Text1);
 		   
 	    }
 	   

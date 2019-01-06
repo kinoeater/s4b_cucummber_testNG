@@ -6,9 +6,10 @@
 		<classes>
 		<class name="runners.Login_Scenarios_Test"></class>  
 		<class name="runners.Contacts_Related_Test"></class> 
-<!--	<class name="runners.Send_Receive_Message_Test"></class>   -->
-<!--  	<class name="runners.CallP_Mid_Call_Actions_Test"></class>    -->
-	 	<class name="runners.Settings_Page_Test"></class>  
+		<class name="runners.Settings_Page_Test"></class>  
+	    <class name="runners.Send_Receive_Message_Test"></class>
+    	<class name="runners.CallP_Mid_Call_Actions_Test"></class>   
+	 	
 		   						
 		</classes>
 	</test>

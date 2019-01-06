@@ -31,6 +31,7 @@ import java.io.OutputStream;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class HookA {
 
@@ -53,7 +54,7 @@ public class HookA {
 
  		
  		capabilities.setBrowserName("chrome");
- 	    capabilities.setPlatform(Platform.ANDROID);
+ 	    capabilities.setPlatform(Platform.WINDOWS);
  	    capabilities.setCapability(ChromeOptions.CAPABILITY, options);
  
  	     	   	 	    
@@ -70,12 +71,13 @@ public class HookA {
  	    WebDriverWait wait = new WebDriverWait(Adriver, 30);
  	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='login-carousel']/div[1]/div[1]")));
  	    
- 	     	 	     	    	
+ 	    	     	 	     	    	
  	 	JavascriptExecutor js = (JavascriptExecutor) Adriver;  
  	 	Thread.sleep(1000);
  	 	js.executeScript("require('electron').remote.BrowserWindow.getFocusedWindow().maximize();");    //maximize the window via JS
  	 	    
- 	 	 	    
+ 	 	
+ 	 	Adriver.manage().timeouts().pageLoadTimeout(30,TimeUnit.SECONDS);
  	}
 	    
 	    
